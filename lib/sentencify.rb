@@ -2,7 +2,7 @@ require 'active_support/core_ext/array'
 
 class Array
   def sentencize(options = {})
-    options.assert_valid_keys(:on, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_connector)
+    options.assert_valid_keys(:on, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_singular_connector, :final_plural_connector)
 
     default_connectors = {
       on:                       :title,
