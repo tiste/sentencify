@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['baptiste.lecocq@gmail.com']
   spec.description   = 'Create sentences with array of Active Record objects'
   spec.summary       = 'Create sentences with array of Active Record objects'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/baptistelecocq/sentencify'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
