@@ -37,15 +37,20 @@ end
 In your `index.html.erb` view:
 ```rb
 @users.sentencize(on: :login)
+@users.sentencize(on: :avatar, image: true)
 ```
 
 It will display all your users by login with a default limit of 5.
+
 You can change this value by passing a limit parameter as following: `limit: 10`
+
+**Extra**: You can display images by turning the image option to true.
 
 ### Advanced
 #### Parameters
 
 Others parameters:
+* `image`, default value: false
 * `empty`, default value: 'No element found'
 * `words_connector`, default value: ', '
 * `two_words_connector`, default value: ' and '

@@ -2,10 +2,11 @@ require 'active_support/core_ext/array'
 
 class Array
   def sentencize(options = {})
-    options.assert_valid_keys(:on, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_singular_connector, :final_plural_connector)
+    options.assert_valid_keys(:on, :image, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_singular_connector, :final_plural_connector)
 
     default_connectors = {
       on:                       :title,
+      image:                    false,
       limit:                    5,
       empty:                    'No element found',
       words_connector:          ', ',
@@ -23,6 +24,7 @@ class Array
     options = default_connectors.merge!(options)
 
     will_sentencized = self.map(&options[:on])
+    will_sentencized.map! { |s| "<img src='#{s}' />" } if options[:image]
 
     case length
     when 0
