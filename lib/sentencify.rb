@@ -16,28 +16,28 @@ class Array
     }
 
     if defined?(I18n)
-      i18n_connectors = I18n.translate(:'sentencify', default: {})
+      i18n_connectors = I18n.translate(:sentencify, default: {})
       default_connectors.merge!(i18n_connectors)
     end
 
     options = default_connectors.merge!(options)
 
+    will_sentencized = self.map(&options[:on])
+
     case length
     when 0
       options[:empty]
     when 1
-      self[0][options[:on]]
+      will_sentencized[0]
     when 2
-      elts = self.map(&options[:on])
-      "#{elts[0]}#{options[:two_words_connector]}#{elts[1]}"
+      "#{will_sentencized[0]}#{options[:two_words_connector]}#{will_sentencized[1]}"
     else
-      elts = self.map(&options[:on])
       if options[:limit] >= length
-        "#{elts[0...-1].join(options[:words_connector])}#{options[:last_word_connector]}#{elts[-1]}"
+        "#{will_sentencized[0...-1].join(options[:words_connector])}#{options[:last_word_connector]}#{will_sentencized[-1]}"
       else
         nb_others = length-options[:limit]
         others    = (nb_others != 1) ? options[:final_plural_connector] : options[:final_singular_connector]
-        "#{elts[0..options[:limit]-1].join(options[:words_connector])}#{options[:last_word_connector]}#{nb_others}#{others}"
+        "#{will_sentencized[0..options[:limit]-1].join(options[:words_connector])}#{options[:last_word_connector]}#{nb_others}#{others}"
       end
     end
   end
