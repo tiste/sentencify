@@ -23,7 +23,7 @@ class Array
 
     options = default_connectors.merge!(options)
 
-    will_sentencized = self.map(&options[:on])
+    will_sentencized = self.map { |o| o[options[:on]] }
     will_sentencized.map! { |s| "<img src='#{s}' />" } if options[:image]
 
     case length

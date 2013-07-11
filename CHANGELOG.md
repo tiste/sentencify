@@ -1,3 +1,7 @@
+## 0.2.0 (11/07/13)
+
+* Add specs
+
 ## 0.1.0 (01/07/13)
 
 * Add images support
