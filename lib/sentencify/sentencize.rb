@@ -2,7 +2,7 @@ require 'active_support/core_ext/array'
 
 class Array
   def sentencize(options = {})
-    options.assert_valid_keys(:on, :image, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_singular_connector, :final_plural_connector)
+    assert_sentenciable options
 
     default_connectors = {
       on:                       :title,
@@ -41,5 +41,11 @@ class Array
         "#{will_sentencized[0..options[:limit]-1].join(options[:words_connector])}#{options[:last_word_connector]}#{nb_others}#{others}"
       end
     end
+  end
+
+private
+
+  def assert_sentenciable(options = {})
+    options.assert_valid_keys(:on, :image, :limit, :empty, :words_connector, :two_words_connector, :last_word_connector, :final_singular_connector, :final_plural_connector)
   end
 end
