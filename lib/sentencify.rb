@@ -1,5 +1,2 @@
-require "sentencify/version"
-
-module Sentencify
-  # Your code goes here...
-end
+require 'sentencify/sentencize'
+require 'sentencify/railtie' if defined?(Rails)
