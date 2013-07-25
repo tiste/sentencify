@@ -1,3 +1,8 @@
+## 0.3.0 (25/07/13)
+
+* Sentencize images with `sentencize_images` helper
+* Refactor specs
+
 ## 0.2.0 (11/07/13)
 
 * Add specs
