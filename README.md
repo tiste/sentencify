@@ -1,7 +1,7 @@
 # Sentencify
 
-[![Build Status](https://travis-ci.org/baptistelecocq/sentencify.png?branch=develop)](https://travis-ci.org/baptistelecocq/sentencify)
-[![Coverage Status](https://coveralls.io/repos/baptistelecocq/sentencify/badge.png?branch=develop)](https://coveralls.io/r/baptistelecocq/sentencify?branch=develop)
+[![Build Status](https://travis-ci.org/tiste/sentencify.png?branch=develop)](https://travis-ci.org/tiste/sentencify)
+[![Coverage Status](https://coveralls.io/repos/tiste/sentencify/badge.png?branch=develop)](https://coveralls.io/r/tiste/sentencify?branch=develop)
 
 With Sentencify, you can create sentences with array of Active Record objects.
 It supports `I18n`.
@@ -37,12 +37,16 @@ In your controller:
 def index
   @users = User.all
 end
+
+names = ['John', 'Doe']
 ```
 
 In your `index.html.erb` view:
 
 ```rb
 @users.sentencize(on: :login)
+
+names.sentencize
 ```
 
 It will display all your users by login with a default limit of 5.

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['baptiste.lecocq@gmail.com']
   spec.description   = 'With Sentencify, you can create sentences with array of Active Record objects. It supports I18n.'
   spec.summary       = 'Create sentences with array of Active Record objects'
-  spec.homepage      = 'https://github.com/baptistelecocq/sentencify'
+  spec.homepage      = 'https://github.com/tiste/sentencify'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
