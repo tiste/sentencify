@@ -1,3 +1,7 @@
+## Next release
+
+* Accept `Array` composed with strings (without key)
+
 ## 0.3.0 (25/07/13)
 
 * Sentencize images with `sentencize_images` helper

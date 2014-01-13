@@ -5,7 +5,6 @@ class Array
     assert_sentenciable options
 
     default_connectors = {
-      on:                       :title,
       image:                    false,
       limit:                    5,
       empty:                    'No element found',
@@ -23,7 +22,7 @@ class Array
 
     options           = default_connectors.merge! options
     will_sentencized  = self.dup
-    will_sentencized  = will_sentencized.map! { |o| o[options[:on]] } unless options[:image]
+    will_sentencized  = will_sentencized.map! { |o| o[options[:on]] } if options[:on] && !options[:image]
 
     case length
     when 0

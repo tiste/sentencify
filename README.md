@@ -37,12 +37,16 @@ In your controller:
 def index
   @users = User.all
 end
+
+names = ['John', 'Doe']
 ```
 
 In your `index.html.erb` view:
 
 ```rb
 @users.sentencize(on: :login)
+
+names.sentencize
 ```
 
 It will display all your users by login with a default limit of 5.
