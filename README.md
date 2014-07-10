@@ -1,7 +1,7 @@
 # Sentencify
 
-[![Build Status](https://travis-ci.org/tiste/sentencify.png?branch=develop)](https://travis-ci.org/tiste/sentencify)
-[![Coverage Status](https://coveralls.io/repos/tiste/sentencify/badge.png?branch=master)](https://coveralls.io/r/tiste/sentencify?branch=master)
+[![Build Status](http://img.shields.io/travis/tiste/sentencify.svg?style=flat)](https://travis-ci.org/tiste/sentencify)
+[![Coverage Status](http://img.shields.io/coveralls/tiste/sentencify.svg?style=flat)](https://coveralls.io/r/tiste/sentencify)
 
 With Sentencify, you can create sentences with array of Active Record objects.
 It supports `I18n`.
